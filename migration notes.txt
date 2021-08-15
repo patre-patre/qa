@@ -1,0 +1,253 @@
+Aws migration
+
+======================================================
+worked on cloud migration 
+
+we have customer on-prem datacenters in delf city  in europe
+
+there are few servers migrated to aws and azure
+
+i worked on server migration and storage and db migrations
+
+in server migration 
+
+used the tools like cloud endure and server migration service 
+
+in database migration
+
+database migration service
+
+
+in storage migration 
+
+worked on netapp cloudsync and aws storage gateway and datasync like 
+
+nfs-s3 and azureblob to nfs 
+
+
+
+interms of azure worked on azure migrate 
+
+and site-recovery service to plan for setting up DR
+
+
+Migration process:
+=======================
+
+we have migration phases:
+
+inventory
+assesment
+planning
+migraion
+test
+validation
+recovery- 
+
+assesments like full vm or physical server details 
+
+what is the hardware and cpu, memory network and disk capacity what type of application services running 
+
+so once we collect the inventory 
+
+
+we will perform assesment using discovery tools like in aws app discovery and risk network also some servers
+
+we performed using manual assesments.
+
+there after 
+
+we will discuss on the cost like before we plan to migration to the cloud datacenters- 
+
+here capacity planning will do it like
+
+what is the estimation cost and services recommmnendations and pricing model either we use same license or 
+
+subcriptions..
+
+so once client decided will plan to install the migrations agents server and configured to replicate the data.
+
+based on the application criteria will decide the 
+
+lift-shift migration 
+
+in lift-shift migration actually we will copy the data first and ensure the replatforming the services readyness 
+
+then will move the applications to the cloud datacenter to prefered regions..
+
+here right we can use terraform to create the resource what would like to configure...
+
+
+or 
+
+live migration 
+
+cloud endure 
+
+
+====
+
+Database migration:
+==========================
+
+
+syncrnous: at a time data changes will replicate into two or more sources
+
+asynhronous: at time data once updated on the source the changes will updated to target database
+
+read replica in rds is one of the exmaple to enable the asyncrhonous replication.....
+
+we have to install database migration replication instance in the aws like dmsm4.large dmst3.large
+
+based on the workload requirements
+
+once we installed the dms in cloud we will have to ensure the vpn connectivity like from on-prem to aws
+
+once site-to site vpn is configured we will create tasks
+
+source target and destination target
+
+source target can be sql ec2 - rds or either any of the database nodes
+
+for continous replication if we want then will ensure database indexing and CDC change data capture from 
+
+source database to target tabase on the required effected changes...
+
+it is one time configration 
+
+but taks we have update what data can be replciate
+
+
+
+
+in dms the common issues we have faced on the indexing bad Queries optimization and some times cdc observed 
+
+the latency we used to check with aws and db team to fix the problem...
+
+also 
+
+schema conversion tool will configured to check the schema of source database and destination database.
+
+to validate like table schma and parameters 
+
+RDS
+
+worked on SQL server and postgesql 
+
+parmeter group: to configure engine settings like null values other important engine settings.
+
+subnet group: collections of private subnets to configure the datbase
+
+option group : for example if we want to backup the database and enable the catalogs those are the options 
+
+we can configure to rds engine
+
+=============================================================================================================
+
+Storage migration:
+
+only 
+
+nfs.. 
+
+s3..
+
+
+
+netapp cloud sync we used to copy the data from on-prem to aws 
+
+migration of the backups to cloud
+
+like backup files will create task to synchronize the data
+
+datasync should be configured in on-prem..
+
+
+
+
+
+
+RTO: recovery time objective
+
+RPO: recovery point objective
+
+SLA: service level aggrement
+'
+SLO: service level own
+
+how do you get the changes
+
+we are using service now tickeing tool to crete the below prioties changes to plan migration workloads
+
+like
+
+P1: 2 hrs critical
+
+P2: high  4 hrs
+
+P3: medium 24 hrs
+
+P4:  3 days 
+
+
+rds..
+
+windows ad need to integration right..
+
+like domain based authentic
+
+
+yes..
+
+cluster configuration
+
+dense compute 
+
+
+maximum 10 nodes..
+
+redshift 
+
+
+
+rds is managed service
+
+and will create instnace and configure storage monitoring backups and maintanace windws
+
+also will ensure security manger
+
+
+compute node..
+
+
+git pull push
+
+commit 
+
+logs
+
+fetch 
+
+and merge...
+
+clone 
+
+sshh, https...
+
+
+index.
+
+
+
+
+s3sync..
+
+yes
+
+like fi
+
+
+
+
+
+
